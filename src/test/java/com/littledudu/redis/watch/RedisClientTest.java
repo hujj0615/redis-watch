@@ -36,5 +36,4 @@ public class RedisClientTest {
 			fail(e.getMessage());
 		}
 	}
-
 }
