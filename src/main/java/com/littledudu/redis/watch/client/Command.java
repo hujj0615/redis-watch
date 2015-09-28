@@ -7,4 +7,5 @@ package com.littledudu.redis.watch.client;
 public interface Command {
 	String info();
 	String info(String section);
+	boolean ping();
 }

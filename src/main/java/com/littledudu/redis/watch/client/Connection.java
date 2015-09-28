@@ -152,7 +152,7 @@ public class Connection {
 				byte typeByte = (byte) inputStream.read();
 				switch(typeByte) {
 				case FIRST_BYTE_SIMPLE_STRING:
-					byte[] simpleString = readSimpleString();
+					byte[] simpleString = readSimpleString(true);
 					break;
 				case FIRST_BYTE_ERRORS:
 					byte[] errMsg = readErrorString();
@@ -223,9 +223,20 @@ public class Connection {
 		}
 	}
 	protected byte[] readErrorString() throws IOException {
-		return readSimpleString();
+		return readSimpleString(true);
 	}
-	protected byte[] readSimpleString() throws IOException {
+	protected byte[] readSimpleString(boolean hasReadFirstByte) throws IOException {
+		if( ! hasReadFirstByte) {
+			int i = inputStream.read();
+			if(i != FIRST_BYTE_SIMPLE_STRING) {
+				if(i == FIRST_BYTE_ERRORS) {
+					String errMsg = new String(readErrorString());
+					throw new RedisClientException("server return err msg: " + errMsg);
+				} else {
+					throw new RedisClientException("expected simple string byte but not: " + i);
+				}
+			}
+		}
 		byte[] buf = new byte[SIMPLE_STRING_MAX_LENGTH];
 		int pos = 0;
 		int b = inputStream.read();

@@ -36,4 +36,14 @@ public class RedisClient extends Connection implements Command {
 		}
 	}
 
+	public boolean ping() {
+		try {
+			writeCommand(Constants.COMMAND_PING);
+			byte[] data = readSimpleString(false);
+			return "PONG".equals(new String(data));
+		} catch (IOException e) {
+			throw new RedisClientException("error execute ping command", e);
+		}
+	}
+
 }

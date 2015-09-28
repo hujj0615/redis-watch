@@ -36,4 +36,13 @@ public class RedisClientTest {
 			fail(e.getMessage());
 		}
 	}
+	
+	@Test
+	public void testPing() {
+		assertTrue(client.ping());
+		assertTrue(client.ping());
+		assertTrue(client.ping());
+		assertTrue(client.ping());
+		System.out.println("after ping");
+	}
 }

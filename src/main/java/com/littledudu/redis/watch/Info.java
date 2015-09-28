@@ -157,4 +157,37 @@ public class Info implements Serializable {
 	public void setKeyspaceMisses(long keyspaceMisses) {
 		this.keyspaceMisses = keyspaceMisses;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Info [redisVersion=");
+		builder.append(redisVersion);
+		builder.append(", processId=");
+		builder.append(processId);
+		builder.append(", port=");
+		builder.append(port);
+		builder.append(", uptimeSeconds=");
+		builder.append(uptimeSeconds);
+		builder.append(", connectedClients=");
+		builder.append(connectedClients);
+		builder.append(", usedMemory=");
+		builder.append(usedMemory);
+		builder.append(", totalConnectionsReceived=");
+		builder.append(totalConnectionsReceived);
+		builder.append(", totalCommandsProcessed=");
+		builder.append(totalCommandsProcessed);
+		builder.append(", instantaneousOpsPerSec=");
+		builder.append(instantaneousOpsPerSec);
+		builder.append(", expiredKeys=");
+		builder.append(expiredKeys);
+		builder.append(", evictedKeys=");
+		builder.append(evictedKeys);
+		builder.append(", keyspaceHits=");
+		builder.append(keyspaceHits);
+		builder.append(", keyspaceMisses=");
+		builder.append(keyspaceMisses);
+		builder.append("]");
+		return builder.toString();
+	}
 }
