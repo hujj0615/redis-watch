@@ -41,10 +41,10 @@ public class InfoTest {
 
 	private static final String TEST_INFO_RESPONSE = 		"# Server\r\n" + 
 			"redis_version:2.8.5\r\n" + 
-			"process_id:28455\r\n" + 
-			"tcp_port:6389\r\n" + 
-			"uptime_in_seconds:1877036\r\n" + 
-			"uptime_in_days:21\r\n" + 
+			"process_id:8455\r\n" + 
+			"tcp_port:6379\r\n" + 
+			"uptime_in_seconds:999\r\n" + 
+			"uptime_in_days:2\r\n" + 
 			"# Clients\r\n" + 
 			"connected_clients:6\r\n" + 
 			"client_longest_output_list:0\r\n" + 

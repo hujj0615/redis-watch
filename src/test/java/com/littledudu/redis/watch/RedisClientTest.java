@@ -9,7 +9,7 @@ import com.littledudu.redis.watch.client.RedisClient;
 
 public class RedisClientTest {
 	
-	private RedisClient client = new RedisClient("10.160.128.52", 6389);
+	private RedisClient client = new RedisClient("localhost", 6379);
 	
 	@Before
 	public void setUp() throws Exception {
