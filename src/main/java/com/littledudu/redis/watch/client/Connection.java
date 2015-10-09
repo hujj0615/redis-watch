@@ -95,7 +95,7 @@ public class Connection {
 	 * @param num
 	 * @return
 	 */
-	private byte[] numberToDecimalBytes(int num) {
+	protected byte[] numberToDecimalBytes(int num) {
 		int size = 0;
 		for(; size < numberToByteSize.length; size++) {
 			if(num > numberToByteSize[size]) {

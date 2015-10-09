@@ -15,4 +15,6 @@ public final class Constants {
 	
 	public static final byte[] COMMAND_INFO = "info".getBytes(CHAR_SET);
 	public static final byte[] COMMAND_PING = "ping".getBytes(CHAR_SET);
+	public static final byte[] COMMAND_GET = "get".getBytes(CHAR_SET);
+	public static final byte[] COMMAND_SET = "set".getBytes(CHAR_SET);
 }
